@@ -1,4 +1,4 @@
 url-cleaner
 ===========
 
-Lengthens and cleans leans shortened urls
+Lengthens and cleans shortened urls
