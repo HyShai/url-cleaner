@@ -5,29 +5,27 @@ The inbound shortened url can either be provided as a command line
 argument or on the iOS clipboard.
 
 url_cleaner follows all header redirects, instead of downloading
-the entire webpage as CleanLinks does
-(See: https://twitter.com/gcaprio/status/418040618636435456),
-which 1) saves you bandwidth and 2) doesn't register as a click (at least for bit.ly)
+the entire webpage as CleanLinks does which 1) saves you bandwidth
+and 2) does not register as a click (at least for bit.ly).
+See: https://twitter.com/gcaprio/status/418040618636435456
 
 It also has optional support for LaunchCenterPro if it is installed.
 
 Source code at: https://github.com/HyShai/url-cleaner'''
 
-import urllib, clipboard, re, requests, webbrowser, sys
+import clipboard, console, re, requests, sys, urllib, webbrowser
 
-def url_lengthen(url): # recursively lengthen the url
-	
+def url_lengthen(url):  # recursively lengthen the url
 	new_url = requests.head(url).headers.get('location')
 	return url_lengthen(new_url) if new_url else url
 
 url = sys.argv[1] if len(sys.argv) > 1 else clipboard.get()
 
-if url:
-	url = url_lengthen(url)
-else:
+if not url:
 	print(welcome_msg)
         sys.exit()
 
+url = url_lengthen(url)
 #strip analytics garbage
 url = re.sub(r'(?<=\&)?utm\w+=[^\&]+(\&)?','',url)
 
@@ -36,7 +34,7 @@ if webbrowser.can_open('launch://'):
 	launch = 'launch://clipboard?text=%s' % params
 	webbrowser.open(launch)
 else: 
-	print 'Copying'
+	print('Copying )',
         console.write_link(url, url)
-        print 'to the clipboard'
+        print('to the clipboard')
 	clipboard.set(url)
