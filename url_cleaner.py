@@ -11,7 +11,7 @@ which 1) saves you bandwidth and 2) doesn't register as a click (at least for bi
 
 It also has optional support for LaunchCenterPro if it is installed.
 
-Source code at: https://gist.github.com/HyShai/e0a83811d8c635bd226f'''
+Source code at: https://github.com/HyShai/url-cleaner'''
 
 import urllib, clipboard, re, requests, webbrowser, sys
 
