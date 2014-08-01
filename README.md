@@ -1,4 +1,3 @@
 url-cleaner
 ===========
-
-Lengthens and cleans shortened urls
+Pythonista script to lengthen and clean shortened urls
