@@ -23,7 +23,7 @@ url = sys.argv[1] if len(sys.argv) > 1 else clipboard.get()
 
 if not url:
 	print(welcome_msg)
-        sys.exit()
+	sys.exit()
 
 url = url_lengthen(url)
 #strip analytics garbage
@@ -34,7 +34,7 @@ if webbrowser.can_open('launch://'):
 	launch = 'launch://clipboard?text=%s' % params
 	webbrowser.open(launch)
 else: 
-	print('Copying )',
-        console.write_link(url, url)
-        print('to the clipboard')
+	print('Copying '),
+	console.write_link(url, url)
+	print('to the clipboard')
 	clipboard.set(url)
