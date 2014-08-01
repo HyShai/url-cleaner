@@ -5,8 +5,8 @@ The inbound shortened url can either be provided as a command line
 argument or on the iOS clipboard.
 
 url_cleaner follows all header redirects, instead of downloading
-the entire webpage as CleanLinks does,
-(See: https://twitter.com/gcaprio/status/418040618636435456)
+the entire webpage as CleanLinks does
+(See: https://twitter.com/gcaprio/status/418040618636435456),
 which 1) saves you bandwidth and 2) doesn't register as a click (at least for bit.ly)
 
 It also has optional support for LaunchCenterPro if it is installed.
