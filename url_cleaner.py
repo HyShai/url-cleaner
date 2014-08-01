@@ -5,7 +5,7 @@ The inbound shortened url can either be provided as a command line
 argument or on the iOS clipboard.
 
 url_cleaner follows all header redirects, instead of downloading
-the entire webpage as CleanLinks does which 1) saves you bandwidth
+the entire webpage as CleanLinks does, which 1) saves you bandwidth
 and 2) does not register as a click (at least for bit.ly).
 See: https://twitter.com/gcaprio/status/418040618636435456
 
