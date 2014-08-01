@@ -1,6 +1,6 @@
 welcome_msg = '''url_cleaner is a poor man's CleanLinks.
 See: https://itunes.apple.com/us/app/clean-links/id623671942?mt=8
-It takes a shortened url and returns the lenthened url.
+It takes a shortened url and returns the lengthened, cleaned url.
 The inbound shortened url can either be provided as a command line
 argument or on the iOS clipboard.
 
