@@ -28,7 +28,7 @@ if not url:
 	sys.exit()
 
 #strip analytics garbage
-url = re.sub(r'(?<=\&)?utm\w+=[^\&]+(\&)?','',url)
+url = re.sub(r'(?<=\&|\?)utm\w+=[^\&]+(\&)?','',url)
 
 if webbrowser.can_open('launch://'):
 	params = urllib.quote('[prompt:Set Clipboard=%s]' % url)
