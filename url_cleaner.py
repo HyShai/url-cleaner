@@ -16,16 +16,17 @@ Source code at: https://github.com/HyShai/url-cleaner'''
 import clipboard, console, re, requests, sys, urllib, webbrowser
 
 def url_lengthen(url):  # recursively lengthen the url
-	new_url = requests.head(url).headers.get('location')
-	return url_lengthen(new_url) if new_url else url
+	try:
+		new_url = requests.head(url).headers.get('location')
+	except ValueError:
+		return None
+    return url_lengthen(new_url) if new_url else url
 
-url = sys.argv[1] if len(sys.argv) > 1 else clipboard.get()
-
+url = url_lengthen(sys.argv[1] if len(sys.argv) > 1 else clipboard.get())
 if not url:
 	print(welcome_msg)
 	sys.exit()
 
-url = url_lengthen(url)
 #strip analytics garbage
 url = re.sub(r'(?<=\&)?utm\w+=[^\&]+(\&)?','',url)
 
