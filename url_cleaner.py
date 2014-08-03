@@ -37,5 +37,5 @@ if webbrowser.can_open('launch://'):
 else: 
 	print('Copying '),
 	console.write_link(url, url)
-	print(' to the clipboard')
+	print('to the clipboard')
 	clipboard.set(url)
